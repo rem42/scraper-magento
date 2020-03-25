@@ -32,7 +32,7 @@ class MagentoCustomer
     protected $groupId;
     /**
      * @var \DateTime
-     * @Serializer\Type("DateTime<'Y-m-d H:i:s'>")
+     * @Serializer\Type("CustomerDateTime")
      * @Serializer\SerializedName("created_at")
      */
     protected $createdAt;

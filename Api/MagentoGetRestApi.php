@@ -2,7 +2,9 @@
 
 namespace Scraper\ScraperMagento\Api;
 
+use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializerBuilder;
+use Scraper\ScraperMagento\Handler\CustomerHandler;
 
 class MagentoGetRestApi extends MagentoRestApi
 {
@@ -14,11 +16,17 @@ class MagentoGetRestApi extends MagentoRestApi
     ];
     protected static $webservice = [
         'order',
+        'customer',
+        'address',
     ];
 
     public function execute()
     {
         $serializer   = SerializerBuilder::create()
+            ->configureHandlers(function (HandlerRegistry $registry) {
+                $registry->registerSubscribingHandler(new CustomerHandler());
+            })
+            ->addDefaultHandlers()
             ->build()
         ;
 
