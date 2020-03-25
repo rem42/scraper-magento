@@ -27,6 +27,12 @@ class MagentoAddresse
     /**
      * @var string
      * @Serializer\Type("string")
+     * @Serializer\SerializedName("email")
+     */
+    protected $email;
+    /**
+     * @var string
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("telephone")
      */
     protected $telephone;
@@ -92,6 +98,11 @@ class MagentoAddresse
     public function getFirstname(): ?string
     {
         return $this->firstname;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
     }
 
     public function getTelephone(): ?string
