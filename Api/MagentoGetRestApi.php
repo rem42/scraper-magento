@@ -13,11 +13,16 @@ class MagentoGetRestApi extends MagentoRestApi
         'customers',
         'addresses',
         'orders',
+        'carriers',
+        'status',
     ];
     protected static $webservice = [
         'order',
         'customer',
         'address',
+        'carrier',
+    ];
+    protected static $rem42Webservice = [
     ];
 
     public function execute()
