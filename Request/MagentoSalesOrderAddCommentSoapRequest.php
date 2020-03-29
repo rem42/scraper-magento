@@ -19,6 +19,20 @@ class MagentoSalesOrderAddCommentSoapRequest extends MagentoSoapRequest
         return true;
     }
 
+    public function setOrderIncrementId(?string $orderIncrementId = null): self
+    {
+        $this->orderIncrementId = $orderIncrementId;
+
+        return $this;
+    }
+
+    public function setStatus(?string $status = null): self
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
     public function sendReuest(\SoapClient $client, $sessionId)
     {
         return $client->{$this->getAction()}($sessionId, $this->orderIncrementId, $this->status);
