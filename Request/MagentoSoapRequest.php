@@ -30,6 +30,11 @@ abstract class MagentoSoapRequest extends RequestSoap
         return false;
     }
 
+    public function isRequestSpecific(): bool
+    {
+        return false;
+    }
+
     /**
      * @return string
      */
@@ -114,8 +119,8 @@ abstract class MagentoSoapRequest extends RequestSoap
         return [];
     }
 
-    public function getVersion(): string
+    public function getVersion(): ?string
     {
-        // TODO: Implement getVersion() method.
+        return null;
     }
 }
