@@ -21,19 +21,4 @@ class MagentoSalesOrderShipmentListSoapApi extends MagentoSoapApi
 
         return $serializer->deserialize($data, self::NAMESPACE . 'Magento' . ucfirst($resources), 'json');
     }
-
-    public function getResourceName()
-    {
-        $resource = $this->request->getResource();
-
-        if (in_array($resource, self::$webservices)) {
-            return $resource;
-        }
-
-        $resources = array_filter(explode('/', $resource));
-
-        if (in_array(end($resources), self::$webservices)) {
-            return end($resources);
-        }
-    }
 }
