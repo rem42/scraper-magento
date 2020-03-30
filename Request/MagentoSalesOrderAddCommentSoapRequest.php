@@ -33,7 +33,7 @@ class MagentoSalesOrderAddCommentSoapRequest extends MagentoSoapRequest
         return $this;
     }
 
-    public function sendReuest(\SoapClient $client, $sessionId)
+    public function sendRequest(\SoapClient $client, $sessionId)
     {
         return $client->{$this->getAction()}($sessionId, $this->orderIncrementId, $this->status);
     }

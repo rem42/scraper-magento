@@ -51,7 +51,7 @@ class MagentoSalesOrderShipmentAddTrackSoapRequest extends MagentoSoapRequest
         return true;
     }
 
-    public function sendReuest(\SoapClient $client, $sessionId)
+    public function sendRequest(\SoapClient $client, $sessionId)
     {
         return $client->{$this->getAction()}($sessionId, $this->shipmentIncrementId, $this->carrier, $this->title, $this->trackNumber);
     }

@@ -24,7 +24,7 @@ class MagentoSalesOrderShipmentCreateSoapRequest extends MagentoSoapRequest
         return true;
     }
 
-    public function sendReuest(\SoapClient $client, $sessionId)
+    public function sendRequest(\SoapClient $client, $sessionId)
     {
         return $client->{$this->getAction()}($sessionId, $this->orderIncrementId);
     }
