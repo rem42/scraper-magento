@@ -7,17 +7,17 @@ use JMS\Serializer\Annotation as Serializer;
 class MagentoCarrier
 {
     /**
-     * @var string
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("type")
+     * @var int
+     * @Serializer\Type("integer")
+     * @Serializer\SerializedName("id")
      */
-    protected $type;
+    protected $id;
     /**
      * @var string
      * @Serializer\Type("string")
-     * @Serializer\SerializedName("sub_type")
+     * @Serializer\SerializedName("carrier")
      */
-    protected $subType;
+    protected $carrier;
     /**
      * @var string
      * @Serializer\Type("string")
@@ -27,18 +27,18 @@ class MagentoCarrier
     /**
      * @var string
      * @Serializer\Type("string")
-     * @Serializer\SerializedName("sub_name")
+     * @Serializer\SerializedName("shipping_method")
      */
-    protected $subName;
+    protected $shippingMethod;
 
-    public function getType(): ?string
+    public function getId(): ?string
     {
-        return $this->type;
+        return $this->id;
     }
 
-    public function getSubType(): ?string
+    public function getCarrier(): ?string
     {
-        return $this->subType;
+        return $this->carrier;
     }
 
     public function getName(): ?string
@@ -46,8 +46,8 @@ class MagentoCarrier
         return $this->name;
     }
 
-    public function getSubName(): ?string
+    public function getShippingMethod(): ?string
     {
-        return $this->subName;
+        return $this->shippingMethod;
     }
 }
