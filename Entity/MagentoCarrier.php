@@ -7,8 +7,8 @@ use JMS\Serializer\Annotation as Serializer;
 class MagentoCarrier
 {
     /**
-     * @var int
-     * @Serializer\Type("integer")
+     * @var string
+     * @Serializer\Type("string")
      * @Serializer\SerializedName("id")
      */
     protected $id;
@@ -18,6 +18,12 @@ class MagentoCarrier
      * @Serializer\SerializedName("carrier")
      */
     protected $carrier;
+    /**
+     * @var string
+     * @Serializer\Type("string")
+     * @Serializer\SerializedName("type")
+     */
+    protected $type;
     /**
      * @var string
      * @Serializer\Type("string")
