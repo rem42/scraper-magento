@@ -56,4 +56,9 @@ class MagentoCarrier
     {
         return $this->shippingMethod;
     }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
 }
