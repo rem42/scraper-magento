@@ -36,4 +36,29 @@ class MagentoRem42Addresse
      * @Serializer\SerializedName("socolissimo_code")
      */
     protected $socolissimoCode;
+
+    public function getSocolissimoMethodId(): ?int
+    {
+        return $this->socolissimoMethodId;
+    }
+
+    public function getSocolissimoMethodName(): ?string
+    {
+        return $this->socolissimoMethodName;
+    }
+
+    public function getSocolissimoRelayId(): ?string
+    {
+        return $this->socolissimoRelayId;
+    }
+
+    public function getSocolissimoDeliveryMode(): ?string
+    {
+        return $this->socolissimoDeliveryMode;
+    }
+
+    public function getSocolissimoCode(): ?string
+    {
+        return $this->socolissimoCode;
+    }
 }
