@@ -4,7 +4,7 @@ namespace Scraper\ScraperMagento\Api;
 
 use JMS\Serializer\SerializerBuilder;
 
-class MagentoDirectoryCountryListSoapApi extends MagentoSoapApi
+class MagentoCatalogInventoryStockItemListSoapApi extends MagentoSoapApi
 {
     public function execute()
     {
@@ -12,7 +12,7 @@ class MagentoDirectoryCountryListSoapApi extends MagentoSoapApi
             ->build()
         ;
 
-        $resources                = 'countries';
+        $resources                = 'stocks';
         $dataToEncode[$resources] = unserialize($this->data);
 
         $data = json_encode($dataToEncode);
