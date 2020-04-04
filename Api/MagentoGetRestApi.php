@@ -21,6 +21,7 @@ class MagentoGetRestApi extends MagentoRestApi
         'customer',
         'address',
         'carrier',
+        'rem42Addresse',
     ];
     protected static $rem42Webservice = [
     ];
@@ -64,6 +65,13 @@ class MagentoGetRestApi extends MagentoRestApi
 
         if (in_array($resources[0], self::$webservices)) {
             return rtrim($resources[0], '\s');
+        }
+
+        if ('rem42' == $resources[0]) {
+            if (3 === count($resources)) {
+                return 'rem42' . rtrim(ucfirst($resources[1]), '\s');
+            }
+            return 'rem42' . ucfirst($resources[1]);
         }
     }
 }
