@@ -2,19 +2,49 @@
   "name" : "rem42/scraper-magento",
   "description" : "API Magento 1.9",
   "license": "MIT",
-  "authors" : [{
-    "name" : "rem42",
-    "email" : "me@remy.ovh",
-    "homepage": "https://remy.ovh"
-  }],
-  "require" : {
-    "php": ">=5.5.9",
-    "jms/serializer-bundle": "^2.0",
-    "rem42/scraper": "^1.0"
-  },
-  "autoload" : {
-    "psr-4" : {
-      "Scraper\\ScraperMagento\\" : ""
+  "authors": [
+    {
+      "name": "rem42",
+      "email": "me@remy.ovh",
+      "homepage": "https://remy.ovh"
     }
+  ],
+  "require": {
+    "php": "^7.4",
+    "ext-oauth": "*",
+    "doctrine/collections": "^1.6",
+    "rem42/scraper": "2.x-dev",
+    "symfony/serializer-pack": "^1.0"
+  },
+  "require-dev": {
+    "rem42/php-cs-fixer-config": "^1.3",
+    "phpstan/phpstan": "^0.12",
+    "phpunit/phpunit": "^9.0",
+    "php-coveralls/php-coveralls": "^2.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Scraper\\ScraperMagento\\": "src/"
+    },
+    "psr-4": {
+      "Scraper\\ScraperMagento\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-0": {
+      "Scraper\\ScraperMagento\\Tests\\": "tests/"
+    },
+    "psr-4": {
+      "Scraper\\ScraperMagento\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "scripts": {
+    "static-analysis": "./bin/phpstan analyse src --level=max --no-progress -vvv",
+    "code-style-check": "./bin/php-cs-fixer fix --dry-run --verbose",
+    "code-style-fix": "./bin/php-cs-fixer fix",
+    "unit-test": "./bin/phpunit"
   }
 }

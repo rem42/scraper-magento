@@ -15,14 +15,4 @@ class MagentoCatalogInventoryStockItemListSoapRequest extends MagentoSoapRequest
     {
         $this->products[] = $product;
     }
-
-    public function isRequestSpecific(): bool
-    {
-        return true;
-    }
-
-    public function sendRequest(\SoapClient $client, $sessionId)
-    {
-        return $client->{$this->getAction()}($sessionId, $this->products);
-    }
 }
